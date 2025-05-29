@@ -1,34 +1,55 @@
 <template>
-  <div class="editor-container row">
-    <!-- Editable Code Editor with Syntax Highlighting -->
+  <HomeLayout>
+    <div class="row justify-content-between align-content-start hero">
+      <!-- Editable Code Editor -->
+      <div class="col-6">
+        <div class="editor-container">
+          <div class="pin">
 
-    <div class="col-6">
-      <pre class="language-html line-numbers">
-        <code
-          class="language-html"
-          contenteditable="true"
-          spellcheck="false"
-          @input="onCodeInput"
-          @keydown.tab.prevent="insertTab"
-          ref="codeRef"
-        ></code>
-      </pre>
+            <span class="red-circle"></span>
+            <span class="yellow-circle"></span>
+            <span class="green-circle"></span>
+            
+          </div>
+          <div class="buttons">
+            <button @click="copyCode">📋 Copy</button>
+            <div style="flex: 1"></div>
+            <button @click="runCode">▶ Run</button>
+          </div>
 
-      <!-- Buttons -->
-      <div class="buttons">
-        <button @click="copyCode">📋 Copy</button>
-        <button @click="runCode">▶ Run</button>
+          <pre class="language-html line-numbers">
+            <code
+              class="language-html"
+              :contenteditable="!isTyping"
+              spellcheck="false"
+              @input="onCodeInput"
+              @keydown.tab.prevent="insertTab"
+              ref="codeRef"
+            ></code>
+          </pre>
+        </div>
+      </div>
+
+      <!-- Output -->
+      <div v-html="output" class="col-6"></div>
+    </div>
+    <div class="image-full">
+      <div class="image-full__scroll">
+        <img src="./img/my-img-2.png" alt="Image">
+      </div>
+      <div class="image-full__circle">
+        <a href="contact.html">          
+          <img class="image-circle" src="https://andreagandolfo.it/images/circle-text.jpg" alt="Circle">
+          <img class="image-avatar" src="https://andreagandolfo.it/images/avatar.png" alt="Avatar">
+        </a>
       </div>
     </div>
-    <div class="col-6">
-      <!-- Output iframe -->
-      <iframe v-if="output" class="output" :srcdoc="output"></iframe>
-    </div>
-  </div>
+  </HomeLayout>
 </template>
 
 <script setup>
 import { ref, onMounted, nextTick } from "vue";
+import HomeLayout from "./../Layouts/HomeLayout.vue";
 import Prism from "prismjs";
 import "prismjs/themes/prism-tomorrow.css";
 import "prismjs/components/prism-markup.js";
@@ -36,56 +57,21 @@ import "prismjs/components/prism-css.js";
 import "prismjs/plugins/line-numbers/prism-line-numbers.css";
 import "prismjs/plugins/line-numbers/prism-line-numbers.js";
 
-const defaultCode = `<section class="hero">
+const defaultCode = `<section class="hero2">
   <div class="content">
     <h1>Hazrat Ali</h1>
     <p>🚀 Full Stack Developer | Vue.js • Laravel • Node.js</p>
     <a href="#contact">Hire Me</a>
   </div>
-</section>
+</section>`;
 
-<style>
-body {
-  margin: 0;
-  font-family: 'Segoe UI', sans-serif;
-  background: #121212;
-  color: white;
-}
-.hero {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
-  text-align: center;
-  background: linear-gradient(135deg, #1f1f1f, #2d2d2d);
-  padding: 20px;
-}
-.content h1 {
-  font-size: 3rem;
-  margin-bottom: 0.5rem;
-  color: #4fc3f7;
-}
-.content p {
-  font-size: 1.3rem;
-  margin-bottom: 1rem;
-}
-.content a {
-  text-decoration: none;
-  padding: 12px 24px;
-  background: #4fc3f7;
-  color: #000;
-  border-radius: 6px;
-  font-weight: bold;
-  transition: background 0.3s;
-}
-.content a:hover {
-  background: #03a9f4;
-}
-</style>`;
-
-const code = ref(defaultCode);
+const code = ref("");
 const output = ref("");
 const codeRef = ref(null);
+const isTyping = ref(true);
+let typingIndex = 0;
+
+
 
 function saveCaret(el) {
   const selection = window.getSelection();
@@ -161,70 +147,144 @@ function runCode() {
   output.value = code.value;
 }
 
+function typeCode() {
+  if (typingIndex < defaultCode.length) {
+    code.value += defaultCode[typingIndex++];
+    highlight();
+    setTimeout(typeCode, 10);
+  } else {
+    isTyping.value = false;
+  }
+}
+
 onMounted(() => {
   nextTick(() => {
-    highlight();
-    runCode();
+    output.value = defaultCode; // Show full output instantly
+    typeCode();                 // Start typing animation
   });
 });
-</script>
 
+</script>
 
 <style scoped>
 .editor-container {
+  position: relative;
   background: #1e1e1e;
   color: white;
   font-family: "Fira Code", monospace;
-  padding: 20px;
-  /* min-height: 100vh; */
-
-  justify-content: space-between;
-  align-items: center;
 }
+/* .language-html{
+  padding-top: 20px;
+} */
 
-/* Code editor look */
 pre {
+  position: relative;
   width: 100%;
-  max-width: 900px;
+  max-height: 400px;
   background: #2d2d2d;
   border-radius: 10px;
   overflow: auto;
   padding: 16px;
-  margin-bottom: 10px;
-  white-space: pre; /* Don't wrap lines */
+  white-space: pre;
+  padding-top: 50px;
+
+
+
 }
 
 code[contenteditable] {
   outline: none;
   display: block;
   font-family: "Fira Code", monospace;
-  white-space: pre; /* Prevent line wrapping */
-  min-height: 300px;
+  min-height: 200px;
   caret-color: white;
+
+  
 }
 
 .buttons {
+  position: absolute;
+  top: 0;
+  right: 15px;
   display: flex;
   gap: 10px;
-  margin-bottom: 10px;
+  padding: 10px;
+  z-index: 1;
 }
 
 .buttons button {
   background: rgba(255, 255, 255, 0.1);
   border: none;
-  padding: 10px 14px;
+  padding: 8px 14px;
   border-radius: 6px;
   cursor: pointer;
   color: white;
-  font-size: 16px;
+  font-size: 14px;
+  transition: background 0.3s;
 }
 
-.output {
-  width: 100%;
-  max-width: 900px;
-  height: 250px;
-  background: white;
-  border-radius: 8px;
-  border: 1px solid #ccc;
+.buttons button:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+pre::-webkit-scrollbar {
+  height: 8px; /* Bottom scrollbar height */
+  width: 8px;  /* Right scrollbar width (in case of vertical) */
+}
+
+pre::-webkit-scrollbar-track {
+  background: #1e1e1e;
+  border-radius: 10px;
+}
+
+pre::-webkit-scrollbar-thumb {
+  background: #555;
+  border-radius: 10px;
+  transition: background 0.3s;
+}
+
+pre::-webkit-scrollbar-thumb:hover {
+  background: #888;
+}
+
+.pin{
+  position: absolute;
+  top: 0;
+  left: 15px;
+  display: flex;
+  gap: 5px;
+  padding: 10px;
+  z-index: 1;
+}
+
+.pin span {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.red-circle {
+  background-color: #ff5f56;
+}
+
+.yellow-circle {
+  background-color: #ffbd2e;
+}
+
+.green-circle {
+  background-color: #27c93f;
+}
+
+.pin:hover .red-circle {
+  background-color: #27c93f; /* Red ➝ Green */
+}
+
+.pin:hover .yellow-circle {
+  background-color: #ff5f56; /* Yellow ➝ Red */
+}
+
+.pin:hover .green-circle {
+  background-color: #ffbd2e; /* Green ➝ Yellow */
 }
 </style>
