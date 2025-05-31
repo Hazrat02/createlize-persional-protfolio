@@ -11,66 +11,145 @@
       />
     </div>
   </div> -->
-  <header class="header header-one">
-        <div class="container-fluid">
-          <div class="header__wrapper">
-            <div class="header__social">
-              <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer">
-                <img src="https://andreagandolfo.it/images/header/facebook.svg" alt="Facebook">
-              </a>
-              <a href="https://twitter.com/" target="_blank" rel="noopener noreferrer">
-                <img src="https://andreagandolfo.it/images/header/twitter.svg" alt="Twitter">
-              </a>
-              <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer">
-                <img src="https://andreagandolfo.it/images/header/instagram.svg" alt="Instagram">
-              </a>
-              <a href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer">
-                <img src="https://andreagandolfo.it/images/header/dribbble.svg" alt="Dribbble">
+  <body>
+    <header class="header header-one">
+      <div class="container-fluid">
+        <div class="header__wrapper">
+          <div class="header__social">
+            <a
+              href="https://www.facebook.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img
+                src="https://andreagandolfo.it/images/header/facebook.svg"
+                alt="Facebook"
+              />
+            </a>
+            <a
+              href="https://twitter.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img
+                src="https://andreagandolfo.it/images/header/twitter.svg"
+                alt="Twitter"
+              />
+            </a>
+            <a
+              href="https://www.linkedin.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img
+                src="https://andreagandolfo.it/images/header/instagram.svg"
+                alt="Instagram"
+              />
+            </a>
+            <a
+              href="https://www.youtube.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img
+                src="https://andreagandolfo.it/images/header/dribbble.svg"
+                alt="Dribbble"
+              />
+            </a>
+          </div>
+          <!-- Start Logo -->
+          <a class="logo" href="index.html">
+            <img
+              src="https://andreagandolfo.it/images/logo/logo.svg"
+              alt="logo"
+            />
+          </a>
+          <!-- End Logo -->
+          <nav class="navbar navbar-expand-lg">
+            <button
+              class="navbar-toggler"
+              type="button"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+            >
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <!-- Start Navbar -->
+            <div class="navbar-collapse">
+              <ul class="navbar-nav">
+                <li class="menu-item">
+                  <a href="index.html">Home</a>
+                </li>
+                <li class="menu-item">
+                  <a href="about.html">About Me</a>
+                </li>
+                <li class="menu-item">
+                  <a href="portfolio.html">Projects</a>
+                </li>
+                <li class="menu-item">
+                  <a href="services.html">Services</a>
+                </li>
+                <li class="menu-item">
+                  <a href="blog.html">Blog</a>
+                </li>
+                <li class="menu-item">
+                  <a href="contact.html">Contact</a>
+                </li>
+              </ul>
+            </div>
+            <!-- End Navbar -->
+            <div class="header__btn">
+              <a href="contact.html" class="btn">
+                <span data-text="Let's Talk">Let's Talk!</span>
               </a>
             </div>
-            <!-- Start Logo -->
-            <a class="logo" href="index.html">
-              <img src="https://andreagandolfo.it/images/logo/logo.svg" alt="logo">
-            </a>
-            <!-- End Logo -->
-            <nav class="navbar navbar-expand-lg">
-              <button class="navbar-toggler" type="button" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-              </button>
-              <!-- Start Navbar -->
-              <div class="navbar-collapse">
-                <ul class="navbar-nav">
-                  <li class="menu-item">
-                    <a href="index.html">Home</a>
-                  </li>
-                  <li class="menu-item">
-                    <a href="about.html">About Me</a>
-                  </li>
-                  <li class="menu-item">
-                    <a href="portfolio.html">Projects</a>
-                  </li>
-                  <li class="menu-item">
-                    <a href="services.html">Services</a>
-                  </li>
-                  <li class="menu-item">
-                    <a href="blog.html">Blog</a>
-                  </li>
-                  <li class="menu-item">
-                    <a href="contact.html">Contact</a>
-                  </li>
-                </ul>
-              </div>
-              <!-- End Navbar -->
-              <div class="header__btn">
-                <a href="contact.html" class="btn">
-                  <span data-text="Let's Talk">Let's Talk!</span>
-                </a>
-              </div>
-            </nav>
+          </nav>
+        </div>
+      </div>
+    </header>
+    <slot />
+    <footer class="footer">
+      <div class="container-fluid">
+        <div class="footer__items">
+          <div class="footer__item">
+            <p>Copyright &copy; 2025 Andrea Gandolfo. Tutti i diritti riservati.</p>
+          </div>
+          <div class="footer__item">
+            <ul class="footer__navbar">
+              <li>
+                <a href="/index">Home</a>
+              </li>
+              <li>
+                <a href="/about">Chi Sono</a>
+              </li>
+              <li>
+                <a href="portfolio.html">Pprogetti</a>
+              </li>
+              <li>
+                <a href="services.html">Servizi</a>
+              </li>
+              <li>
+                <a href="blog.html">Blog</a>
+              </li>
+              <li>
+                <a href="contact.html">Contatti</a>
+              </li>
+            </ul>
+          </div>
+          <div class="footer__item">
+            <ul class="footer__navbar">
+              <li>
+                <a href="#">Termini e Condizioni</a>
+              </li>
+              <li>
+                <a href="#">Privacy policy</a>
+              </li>
+            </ul>
           </div>
         </div>
-      </header>
-      <slot />
+      </div>
+    </footer>
+  </body>
 </template>
 <script>
 // import axios from "axios";

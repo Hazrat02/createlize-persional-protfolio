@@ -1,8 +1,16 @@
 <template>
   <HomeLayout>
-    <div class="row justify-content-between align-content-start hero">
+    <section class="container-fluid mt-5">
+      <div class="row justify-content-between align-items-center hero">
       <!-- Editable Code Editor -->
-      <div class="col-6">
+       
+      <div  class="col-md-6 mb-md-0 mb-5">
+        <div v-html="output">
+        
+       </div>
+       <a href="" class="btn btn-outline-one icon-space-left">See Github</a>
+      </div>
+      <div class="col-md-6">
         <div class="editor-container">
           <div class="pin">
 
@@ -31,9 +39,45 @@
       </div>
 
       <!-- Output -->
-      <div v-html="output" class="col-6"></div>
+    
     </div>
-    <div class="image-full">
+
+
+    <div class="hero__footer">
+          <div class="hero__footer-left">
+            <div class="hero__footer-left-arrow">
+              <img src="https://andreagandolfo.it/images/hero/arrow.svg" alt="Icon">
+            </div>
+            <div class="hero__footer-content">
+              <div class="hero__footer-thumbs">
+                <img src="https://andreagandolfo.it/images/hero/thumb-1.jpg" alt="Avatar">
+                <img src="https://andreagandolfo.it/images/hero/thumb-2.jpg" alt="Avatar">
+                <img src="https://andreagandolfo.it/images/hero/thumb-3.jpg" alt="Avatar">
+                <img src="https://andreagandolfo.it/images/hero/thumb-4.jpg" alt="Avatar">
+              </div>
+              <div class="hero__footer-text">
+                <p>Oltre 30 clienti si affidano ai miei servizi</p>
+              </div>
+            </div>
+          </div>
+          <div class="hero__footer-btn">
+            <a href="contact.html" class="btn btn__full">
+              <span class="icon d-inline-flex align-items-center justify-content-center">
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M13.4553 4.32604V13.996C13.4553 14.3565 13.5774 14.6589 13.8217 14.9032C14.066 15.1475 14.368 15.2692 14.7276 15.2684C15.0873 15.2675 15.3893 15.1454 15.6336 14.9019C15.8779 14.6585 16 14.3565 16 13.996V1.27237C16 0.911862 15.8779 0.609887 15.6336 0.366441C15.3893 0.122995 15.0873 0.000848244 14.7276 0H2.00398C1.64347 0 1.34108 0.122147 1.09678 0.366441C0.852488 0.610736 0.730763 0.91271 0.731611 1.27237C0.73246 1.63202 0.854608 1.93442 1.09805 2.17956C1.3415 2.4247 1.64347 2.54643 2.00398 2.54473H11.674L0.349903 13.8688C0.116636 14.1021 9.53674e-07 14.3989 9.53674e-07 14.7594C9.53674e-07 15.1199 0.116636 15.4168 0.349903 15.6501C0.58317 15.8834 0.880054 16 1.24056 16C1.60106 16 1.89795 15.8834 2.13121 15.6501L13.4553 4.32604Z" fill="#0B0B0B"/>
+                </svg>                                    
+              </span>
+              <div class="btn__full-inner d-flex align-items-center position-relative">
+                <span>
+                  <span data-title="Scrivimi!">
+                    <span>I Miei Contatti</span>
+                  </span>
+                </span>
+              </div>
+            </a>
+          </div>
+        </div>
+        <div class="image-full">
       <div class="image-full__scroll">
         <img src="./img/my-img-2.png" alt="Image">
       </div>
@@ -44,6 +88,7 @@
         </a>
       </div>
     </div>
+    </section>
   </HomeLayout>
 </template>
 
@@ -59,9 +104,10 @@ import "prismjs/plugins/line-numbers/prism-line-numbers.js";
 
 const defaultCode = `<section class="hero2">
   <div class="content">
-    <h1>Hazrat Ali</h1>
-    <p>🚀 Full Stack Developer | Vue.js • Laravel • Node.js</p>
-    <a href="#contact">Hire Me</a>
+    <h3 class="mb-2">Hello! I’m</h3>
+    <h1 class="mb-4">Hazrat Ali</h1>
+    <p>🚀 Full Stack Developer | Vue.js • Laravel • PHP</p>
+    
   </div>
 </section>`;
 
@@ -181,7 +227,8 @@ pre {
   position: relative;
   width: 100%;
   max-height: 400px;
-  background: #2d2d2d;
+  background: linear-gradient(135deg, #1f1f1f, #2d2d2d);
+  /* background: #2d2d2d; */
   border-radius: 10px;
   overflow: auto;
   padding: 16px;
