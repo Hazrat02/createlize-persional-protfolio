@@ -22,7 +22,7 @@
 body {
   font-family: Poppins, sans-serif;
 
-  background: #1e1e1e;
+  background: transparent !important;
   color: #d1cccc;
   overflow-x: hidden;
 }
@@ -464,6 +464,7 @@ img {
 }
 
 .header__social a {
+  color: white;
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 50%;
   width: 42px;
@@ -474,9 +475,11 @@ img {
 }
 
 .header__social a:hover {
-  background-color: #883EFF;
-  border-color: #883EFF;
+  background-color: #a8a4b0b2;
+  border-color: #e3dded;
+
 }
+
 
 .navbar-expand-lg .navbar-toggler {
   display: block;

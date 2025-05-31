@@ -1,5 +1,6 @@
 <template>
   <HomeLayout>
+ 
     <section class="container-fluid mt-5">
       <div class="row justify-content-between align-items-center hero">
       <!-- Editable Code Editor -->
@@ -8,7 +9,8 @@
         <div v-html="output">
         
        </div>
-       <a href="" class="btn btn-outline-one icon-space-left">See Github</a>
+    <div class="container">   <a  href="https://github.com/Hazrat02" class="btn btn-outline-one icon-space-left">See Github <i class="fa-brands fa-github"></i>
+    </a></div>
       </div>
       <div class="col-md-6">
         <div class="editor-container">
@@ -95,6 +97,7 @@
 <script setup>
 import { ref, onMounted, nextTick } from "vue";
 import HomeLayout from "./../Layouts/HomeLayout.vue";
+
 import Prism from "prismjs";
 import "prismjs/themes/prism-tomorrow.css";
 import "prismjs/components/prism-markup.js";

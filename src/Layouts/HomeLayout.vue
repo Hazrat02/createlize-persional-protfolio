@@ -12,6 +12,7 @@
     </div>
   </div> -->
   <body>
+    <AnimateBG t />
     <header class="header header-one">
       <div class="container-fluid">
         <div class="header__wrapper">
@@ -21,48 +22,38 @@
               target="_blank"
               rel="noopener noreferrer"
             >
-              <img
-                src="https://andreagandolfo.it/images/header/facebook.svg"
-                alt="Facebook"
-              />
+            <i class="fa-brands fa-facebook-f"></i>
             </a>
             <a
               href="https://twitter.com/"
               target="_blank"
               rel="noopener noreferrer"
             >
-              <img
-                src="https://andreagandolfo.it/images/header/twitter.svg"
-                alt="Twitter"
-              />
+            <i class="fa-brands fa-twitter"></i>
             </a>
             <a
               href="https://www.linkedin.com/"
               target="_blank"
               rel="noopener noreferrer"
             >
-              <img
-                src="https://andreagandolfo.it/images/header/instagram.svg"
-                alt="Instagram"
-              />
+            <i class="fa-brands fa-instagram"></i>
             </a>
             <a
               href="https://www.youtube.com/"
               target="_blank"
               rel="noopener noreferrer"
             >
-              <img
-                src="https://andreagandolfo.it/images/header/dribbble.svg"
-                alt="Dribbble"
-              />
+              <i class="fa-brands fa-telegram"></i>
             </a>
           </div>
           <!-- Start Logo -->
           <a class="logo" href="index.html">
-            <img
-              src="https://andreagandolfo.it/images/logo/logo.svg"
+            <img 
+            style="width: 200px;"
+              src="./../assets/frontend/img/logo.png"
               alt="logo"
             />
+         
           </a>
           <!-- End Logo -->
           <nav class="navbar navbar-expand-lg">
@@ -152,12 +143,13 @@
   </body>
 </template>
 <script>
+import AnimateBG from "./../components/AnimateBG.vue";
 // import axios from "axios";
 // import { isAuthenticated, logout } from "./../middleware/index";
 // import { useAuthUserStore } from "./../stores/user";
 
 export default {
-  components: {},
+  components: {AnimateBG},
   data() {
     // return {
     //   authUser: "",
@@ -176,23 +168,23 @@ export default {
     },
   },
 
-  async created() {
-    if (isAuthenticated() == true) {
-      // auth user data +++++++++++++++++++++++++++++
+  // async created() {
+  //   if (isAuthenticated() == true) {
+  //     // auth user data +++++++++++++++++++++++++++++
 
-      const userStore = useAuthUserStore();
-      const authUser = userStore.authUser;
+  //     const userStore = useAuthUserStore();
+  //     const authUser = userStore.authUser;
 
-      if (authUser) {
-        this.authUser = authUser;
-      } else {
-        // userStore.reSetAuthUser();
-        this.authUser = await userStore.reSetAuthUser();
-      }
-    } else {
-      this.authUser = "";
-    }
-  },
+  //     if (authUser) {
+  //       this.authUser = authUser;
+  //     } else {
+  //       // userStore.reSetAuthUser();
+  //       this.authUser = await userStore.reSetAuthUser();
+  //     }
+  //   } else {
+  //     this.authUser = "";
+  //   }
+  // },
 
   // methods: {
   //   faq(id) {
