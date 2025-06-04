@@ -9,7 +9,7 @@
         <div v-html="output">
         
        </div>
-    <div class="container">   <a  href="https://github.com/Hazrat02" class="btn btn-outline-one icon-space-left">See Github <i class="fa-brands fa-github"></i>
+    <div class="container">   <a target="_blank" href="https://github.com/Hazrat02" class="btn btn-outline-one icon-space-left">See Github <i class="fa-brands fa-github"></i>
     </a></div>
       </div>
       <div class="col-md-6">
@@ -81,7 +81,7 @@
         </div>
         <div class="image-full">
       <div class="image-full__scroll">
-        <img src="./img/my-img-2.png" alt="Image">
+        <img src="./../assets/frontend/img/my-img-2.png" alt="Image">
       </div>
       <div class="image-full__circle">
         <a href="contact.html">          
@@ -98,12 +98,18 @@
 import { ref, onMounted, nextTick } from "vue";
 import HomeLayout from "./../Layouts/HomeLayout.vue";
 
+
 import Prism from "prismjs";
 import "prismjs/themes/prism-tomorrow.css";
 import "prismjs/components/prism-markup.js";
 import "prismjs/components/prism-css.js";
 import "prismjs/plugins/line-numbers/prism-line-numbers.css";
 import "prismjs/plugins/line-numbers/prism-line-numbers.js";
+
+
+import { gsap } from 'gsap'
+import ScrollTrigger from 'gsap/ScrollTrigger'
+
 
 const defaultCode = `<section class="hero2">
   <div class="content">
@@ -211,6 +217,32 @@ onMounted(() => {
     output.value = defaultCode; // Show full output instantly
     typeCode();                 // Start typing animation
   });
+
+  const imageFull = document.querySelector('.image-full')
+
+  if (imageFull) {
+    gsap.registerPlugin(ScrollTrigger)
+
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: imageFull,
+        start: 'top top',
+        end: '+=120%',
+        scrub: true,
+        pin: true
+      }
+    })
+
+    tl.to('.image-full__scroll', {
+      clipPath: 'polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)',
+      ease: 'none'
+    })
+  }
+  
+
+
+
+
 });
 
 </script>

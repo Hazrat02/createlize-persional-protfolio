@@ -4249,14 +4249,15 @@ box-shadow: 0 8px 32px 0 rgba(255, 255, 255, 0.622);
 }
 
 .btn-outline-one:hover {
-  border: 1px solid #f1f3fc
+  border: 1px solid #f1f3fc;
+  /* -webkit-transform: translate(-50%, -50%) scaleX(1.2); */
+  transform: translate(+5%, +5%) scaleX(1);
+  background: rgba(143, 140, 140, 0.471) !important;
 }
 
-.btn-outline-one:hover::after {
-  -webkit-transform: translate(-50%, -50%) scaleX(1.2);
-  transform: translate(-50%, -50%) scaleX(1.2);
-  background: rgba(174, 161, 161, 0.471) !important;
-}
+/* .btn-outline-one:hover::after {
+  
+} */
 
 @-webkit-keyframes animate-ripple {
   50% {
