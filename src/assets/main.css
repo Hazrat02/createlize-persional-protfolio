@@ -2,6 +2,7 @@
 @import './frontend/css/lity.min.css';
 @import './frontend/css/plyr.min.css';
 @import './frontend/css/slick.css';
+@import './frontend/css/animate.css';
 @import url(https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap);
 
 /* #app {
@@ -189,6 +190,7 @@ img {
 }
 
 .section-subtitle img {
+  background: #ff0000;
   margin-top: 16px;
   width: 0px;
   transition: 0.8s width ease-in-out;
@@ -648,7 +650,7 @@ img {
   background-position: center top;
   background-repeat: no-repeat;
   background-size: cover;
-  padding: 120px 0 120px;
+  padding: 120px 0 50px;
   word-break: break-all;
 }
 
@@ -794,6 +796,8 @@ img {
 }
 
 .hero__footer-thumbs img {
+  height: 72px;
+  width: 72px;
   border: 2px solid #fff;
   border-radius: 50%;
 }
@@ -829,7 +833,42 @@ img {
   height: 100vh;
   clip-path: polygon(25% 0%, 75% 0%, 75% 100%, 25% 100%);
 }
+/* Shadow overlay matching body background */
+.image-full::before,
+.image-full::after,
+.image-full__scroll::before,
+.image-full__scroll::after {
+  content: '';
+  position: absolute;
+  background-color: #1e1e1e48; /* match body background */
+  z-index: 0;
+  pointer-events: none;
+}
 
+/* Left and right shadows */
+.image-full::before {
+  top: 0;
+  left: 0;
+  width: 25%;
+  height: 100%;
+}
+
+
+
+/* Top and bottom shadows */
+.image-full__scroll::before {
+  top: 0;
+  left: 25%;
+  width: 50%;
+  height: 10%;
+}
+
+.image-full__scroll::after {
+  bottom: 0;
+  left: 25%;
+  width: 50%;
+  height: 10%;
+}
 .image-full__scroll img {
   width: 100%;
   height: 100%;

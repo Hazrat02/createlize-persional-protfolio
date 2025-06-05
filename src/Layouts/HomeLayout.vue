@@ -17,28 +17,36 @@
       <div class="container-fluid">
         <div class="header__wrapper">
           <div class="header__social">
-            <a
+            <a v-animate
+                data-animation="bounceInDown animated"
+                data-wow-duration="1s"
               href="https://www.facebook.com/"
               target="_blank"
               rel="noopener noreferrer"
             >
             <i class="fa-brands fa-facebook-f"></i>
             </a>
-            <a
+            <a v-animate
+                data-animation="bounceInDown animated"
+                data-wow-duration="1.3s"
               href="https://twitter.com/"
               target="_blank"
               rel="noopener noreferrer"
             >
             <i class="fa-brands fa-twitter"></i>
             </a>
-            <a
+            <a v-animate
+                data-animation="bounceInDown animated"
+                data-wow-duration="1.6s"
               href="https://www.linkedin.com/"
               target="_blank"
               rel="noopener noreferrer"
             >
             <i class="fa-brands fa-instagram"></i>
             </a>
-            <a
+            <a v-animate
+                data-animation="bounceInDown animated"
+                data-wow-duration="1.9s"
               href="https://www.youtube.com/"
               target="_blank"
               rel="noopener noreferrer"
