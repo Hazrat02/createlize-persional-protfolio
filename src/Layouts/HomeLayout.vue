@@ -12,41 +12,47 @@
     </div>
   </div> -->
   <body>
-    <AnimateBG t />
+    <AnimateBG />
+   <PopupAd />
+
     <header class="header header-one">
       <div class="container-fluid">
         <div class="header__wrapper">
           <div class="header__social">
-            <a v-animate
-                data-animation="bounceInDown animated"
-                data-wow-duration="1s"
+            <a
+              v-animate
+              data-animation="bounceInDown animated"
+              data-wow-duration="1s"
               href="https://www.facebook.com/"
               target="_blank"
               rel="noopener noreferrer"
             >
-            <i class="fa-brands fa-facebook-f"></i>
+              <i class="fa-brands fa-facebook-f"></i>
             </a>
-            <a v-animate
-                data-animation="bounceInDown animated"
-                data-wow-duration="1.3s"
+            <a
+              v-animate
+              data-animation="bounceInDown animated"
+              data-wow-duration="1.3s"
               href="https://twitter.com/"
               target="_blank"
               rel="noopener noreferrer"
             >
-            <i class="fa-brands fa-twitter"></i>
+              <i class="fa-brands fa-twitter"></i>
             </a>
-            <a v-animate
-                data-animation="bounceInDown animated"
-                data-wow-duration="1.6s"
+            <a
+              v-animate
+              data-animation="bounceInDown animated"
+              data-wow-duration="1.6s"
               href="https://www.linkedin.com/"
               target="_blank"
               rel="noopener noreferrer"
             >
-            <i class="fa-brands fa-instagram"></i>
+              <i class="fa-brands fa-instagram"></i>
             </a>
-            <a v-animate
-                data-animation="bounceInDown animated"
-                data-wow-duration="1.9s"
+            <a
+              v-animate
+              data-animation="bounceInDown animated"
+              data-wow-duration="1.9s"
               href="https://www.youtube.com/"
               target="_blank"
               rel="noopener noreferrer"
@@ -56,12 +62,11 @@
           </div>
           <!-- Start Logo -->
           <a class="logo" href="index.html">
-            <img 
-            style="width: 200px;"
-              src="./../assets/frontend/img/logo.png"
+            <img
+              style="width: 200px"
+              src="https://createlize.com/wp-content/uploads/2025/01/createlize-logo-2.png"
               alt="logo"
             />
-         
           </a>
           <!-- End Logo -->
           <nav class="navbar navbar-expand-lg">
@@ -111,7 +116,9 @@
       <div class="container-fluid">
         <div class="footer__items">
           <div class="footer__item">
-            <p>Copyright &copy; 2025 Andrea Gandolfo. Tutti i diritti riservati.</p>
+            <p>
+              Copyright &copy; 2025 Andrea Gandolfo. Tutti i diritti riservati.
+            </p>
           </div>
           <div class="footer__item">
             <ul class="footer__navbar">
@@ -152,12 +159,13 @@
 </template>
 <script>
 import AnimateBG from "./../components/AnimateBG.vue";
+import PopupAd from './../components/Ads.vue'; // Adjust the path as needed
 // import axios from "axios";
 // import { isAuthenticated, logout } from "./../middleware/index";
 // import { useAuthUserStore } from "./../stores/user";
 
 export default {
-  components: {AnimateBG},
+  components: { AnimateBG,PopupAd },
   data() {
     // return {
     //   authUser: "",
@@ -233,8 +241,3 @@ export default {
 };
 </script>
 
-<style>
-.active {
-  color: rgb(43, 169, 188) !important;
-}
-</style>

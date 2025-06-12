@@ -5,7 +5,8 @@
         <!-- Editable Code Editor -->
 
         <div class="col-md-6 mb-md-0 mb-5">
-          <div v-html="output"></div>
+          <div v-html="output" style="  max-height: 355px;
+  overflow: auto;"></div>
           <div class="container">
             <a
               target="_blank"
@@ -139,6 +140,7 @@ import { ref, onMounted, nextTick } from "vue";
 import HomeLayout from "./../Layouts/HomeLayout.vue";
 import About from './../components/about.vue'
 
+
 import Prism from "prismjs";
 import "prismjs/themes/prism-tomorrow.css";
 import "prismjs/components/prism-markup.js";
@@ -148,7 +150,7 @@ import "prismjs/plugins/line-numbers/prism-line-numbers.js";
 
 import { gsap } from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
-import AboutViewVue from "./AboutView.vue";
+
 
 const defaultCode = `<section class="hero2">
   <div class="content">

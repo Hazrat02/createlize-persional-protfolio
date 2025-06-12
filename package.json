@@ -13,7 +13,6 @@
     "pinia": "^3.0.1",
     "prismjs": "^1.30.0",
     "scrollmagic": "^2.0.8",
-    "scrollmagic-plugin-gsap": "^1.0.4",
     "tsparticles": "^2.9.3",
     "vue": "^3.5.13",
     "vue-router": "^4.5.0",
