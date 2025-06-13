@@ -5,8 +5,7 @@
         <!-- Editable Code Editor -->
 
         <div class="col-md-6 mb-md-0 mb-5">
-          <div v-html="output" style="  max-height: 355px;
-  overflow: auto;"></div>
+          <div v-html="output" style="max-height: 355px; overflow: auto"></div>
           <div class="container">
             <a
               target="_blank"
@@ -55,10 +54,7 @@
           </div>
           <div class="hero__footer-content">
             <div class="hero__footer-thumbs">
-              <img
-                src="./../assets/frontend/img/clients/1.jpeg"
-                alt="Avatar"
-              />
+              <img src="./../assets/frontend/img/clients/1.jpeg" alt="Avatar" />
               <img
                 src="https://andreagandolfo.it/images/hero/thumb-2.jpg"
                 alt="Avatar"
@@ -67,10 +63,7 @@
                 src="https://andreagandolfo.it/images/hero/thumb-3.jpg"
                 alt="Avatar"
               />
-              <img
-                src="./../assets/frontend/img/clients/1.jpeg"
-                alt="Avatar"
-              />
+              <img src="./../assets/frontend/img/clients/1.jpeg" alt="Avatar" />
             </div>
             <div class="hero__footer-text">
               <p>Over 12 clients rely on my services.</p>
@@ -107,7 +100,6 @@
           </a>
         </div>
       </div>
-      
     </section>
     <section class="mt-5">
       <div class="image-full">
@@ -131,55 +123,85 @@
       </div>
     </section>
 
+    <About />
 
+    <!-- dark mode -->
+    <div class="dark-mode-section bg-dark" >
+      <span class="dark-mode-shape1"></span>
+      <span class="dark-mode-shape2"></span>
+      <span class="dark-mode-shape3"></span>
+      <span class="dark-mode-shape4 rounded-pill"></span>
+      <span class="dark-mode-shape5 rounded-pill"></span>
+      <span class="dark-mode-shape6 rounded-pill"></span>
+      <span class="dark-mode-shape7 rounded-pill"></span>
+      <img
+        src="https://preadmin.dreamstechnologies.com/assets/img/icons/star.svg"
+        alt="img"
+        class="dark-mode-bg1"
+      />
+      <img
+        src="https://preadmin.dreamstechnologies.com/assets/img/icons/star2.svg"
+        alt="img"
+        class="dark-mode-bg2"
+      />
+      <div class="container">
+        <div class="row align-items-center">
+          <div
+            class="col-lg-6 pe-xl-5"
+            v-animate
+            data-animation="fadeInLeft animated"
+            data-wow-duration="1s"
+          >
+            <div class="section-heading">
+              <h3 class="mb-2 text-white">Envento Market Theme</h3>
+              <p class="fw-medium text-light">
+                Buy any theme of Envento market or Themforest with 60% discount within 1 hour. <a target="_blank" href="https://themeforest.net/"><i class="fa fa-arrow-alt-circle-right"></i></a>
+              </p>
+            </div>
+            <form class="mt-2" @submit.prevent="submitForm">
+              <div class="form-group">
+                <label class="mb-1" for="exampleInputEmail1">Template Link <span style="color: red;">*</span></label>
+                <input
+                  type="text"
+                  class="form-control"
+               v-model="templateLink"
+                  placeholder="https://preview.themeforest.net/item/tanish-cosmetic-shop-shopify-theme/"
+                />
+                
+              </div>
+            <!-- <button type="submit" class="btn btn-outline-one icon-space-left mt-4"
+              >
+              <i class="fas fa-shopping-cart me-1"> </i>Purchase Template</button
+            > -->
+            </form>
 
-    <About/>
-
-
-
-
-    		<!-- dark mode -->
-        <div class="dark-mode-section bg-dark" id="theme">
-			<span class="dark-mode-shape1"></span>
-			<span class="dark-mode-shape2"></span>
-			<span class="dark-mode-shape3"></span>
-			<span class="dark-mode-shape4 rounded-pill"></span>
-			<span class="dark-mode-shape5 rounded-pill"></span>
-			<span class="dark-mode-shape6 rounded-pill"></span>
-			<span class="dark-mode-shape7 rounded-pill"></span>
-			<img src="https://preadmin.dreamstechnologies.com/assets/img/icons/star.svg" alt="img" class="dark-mode-bg1">
-			<img src="https://preadmin.dreamstechnologies.com/assets/img/icons/star2.svg" alt="img" class="dark-mode-bg2">
-			<div class="container">
-               <div class="row align-items-center">
-				   <div class="col-lg-6 pe-xl-5" v-animate
-              data-animation="fadeInLeft animated"
-              data-wow-duration="1s">
-						<div class="section-heading">
-							<h3 class="mb-2 text-white">Envento Market Theme</h3>
-							<p class="fw-medium text-light">Buy any theme of Envento market or Themforest with 60% discount.</p>
-						</div>
-            
-						<a href="" class="btn btn-primary btn-lg"><i class="isax isax-crown5 me-1"></i>Purchase Template</a>
-				   </div>
-				   <div class="col-lg-6">
-                      <div class="dark-mode-image" v-animate
+           
+          </div>
+          <div class="col-lg-6">
+            <div
+              class="dark-mode-image"
+              v-animate
               data-animation="zoomIn animated"
-              data-wow-duration="0.5s">
-						 <img src="https://preadmin.dreamstechnologies.com/assets/img/inner-pages/inner-pages-10.svg" alt="img" class="img-fluid w-100">
-					  </div>
-				   </div>
-			   </div>
-			</div>
-		</div>
-		<!-- dark mode -->
+              data-wow-duration="0.5s"
+            >
+              <img
+                src="https://preadmin.dreamstechnologies.com/assets/img/inner-pages/inner-pages-10.svg"
+                alt="img"
+                class="img-fluid w-100"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- dark mode -->
   </HomeLayout>
 </template>
 
 <script setup>
 import { ref, onMounted, nextTick } from "vue";
 import HomeLayout from "./../Layouts/HomeLayout.vue";
-import About from './../components/about.vue'
-
+import About from "./../components/about.vue";
 
 import Prism from "prismjs";
 import "prismjs/themes/prism-tomorrow.css";
@@ -190,7 +212,6 @@ import "prismjs/plugins/line-numbers/prism-line-numbers.js";
 
 import { gsap } from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
-
 
 const defaultCode = `<section class="hero2">
   <div class="content">
@@ -206,6 +227,17 @@ const output = ref("");
 const codeRef = ref(null);
 const isTyping = ref(true);
 let typingIndex = 0;
+
+const templateLink = ref('')
+
+const submitForm = () => {
+  const phoneNumber = '+8801783195999' // ✅ Replace with your WhatsApp number
+  const message = `I need to purchase this theme: ${templateLink.value}. How much is the price?`
+  const encodedMessage = encodeURIComponent(message)
+  const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`
+
+  window.open(whatsappUrl, '_blank')
+}
 
 function saveCaret(el) {
   const selection = window.getSelection();

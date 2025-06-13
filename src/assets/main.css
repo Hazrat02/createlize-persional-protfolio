@@ -4470,6 +4470,20 @@ border: 1px solid rgb(255, 254, 254);
   padding: 80px 0;
   z-index: 0;
 }
+
+.dark-mode-section .form-control {
+  background: transparent;
+  color: white;
+}
+
+
+.dark-mode-section .form-control::placeholder {
+  color: rgba(255, 255, 255, 0.181);
+  opacity: 1; /* Ensures full visibility in some browsers */
+}
+
+
+
 @media (max-width: 991.98px) {
   .dark-mode-section {
     padding: 50px 0;
