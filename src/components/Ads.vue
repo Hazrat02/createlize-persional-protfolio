@@ -8,7 +8,10 @@
     >
       <!-- Close Button -->
       <button class="close-button" @click="closePopup">&times;</button>
-
+    <div class="popup-containt">
+        <h1 >GET</h1>
+        <p> Envento & Themeforest Any web template through me </p>
+    </div>
       <!-- Ad Image -->
       <img
         src="./../assets/frontend/img/ads.png"
@@ -80,6 +83,22 @@ export default {
   width: 100%;
   height: auto;
   display: block;
+}
+.popup-containt{
+   position: absolute;
+  top: 50px;
+  right: 2px;
+  width: 30%;
+  /* background: white; */
+  color: rgb(255, 255, 255);
+  border: none;
+  align-content: center;
+  align-items: center;
+
+
+
+  z-index: 10;
+
 }
 
 /* Close Button */

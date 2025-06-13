@@ -130,8 +130,48 @@
         </div>
       </div>
     </section>
+
+
+
     <About/>
 
+
+
+
+    		<!-- dark mode -->
+        <div class="dark-mode-section bg-dark" id="theme">
+			<span class="dark-mode-shape1"></span>
+			<span class="dark-mode-shape2"></span>
+			<span class="dark-mode-shape3"></span>
+			<span class="dark-mode-shape4 rounded-pill"></span>
+			<span class="dark-mode-shape5 rounded-pill"></span>
+			<span class="dark-mode-shape6 rounded-pill"></span>
+			<span class="dark-mode-shape7 rounded-pill"></span>
+			<img src="https://preadmin.dreamstechnologies.com/assets/img/icons/star.svg" alt="img" class="dark-mode-bg1">
+			<img src="https://preadmin.dreamstechnologies.com/assets/img/icons/star2.svg" alt="img" class="dark-mode-bg2">
+			<div class="container">
+               <div class="row align-items-center">
+				   <div class="col-lg-6 pe-xl-5" v-animate
+              data-animation="fadeInLeft animated"
+              data-wow-duration="1s">
+						<div class="section-heading">
+							<h3 class="mb-2 text-white">Envento Market Theme</h3>
+							<p class="fw-medium text-light">Buy any theme of Envento market or Themforest with 60% discount.</p>
+						</div>
+            
+						<a href="" class="btn btn-primary btn-lg"><i class="isax isax-crown5 me-1"></i>Purchase Template</a>
+				   </div>
+				   <div class="col-lg-6">
+                      <div class="dark-mode-image" v-animate
+              data-animation="zoomIn animated"
+              data-wow-duration="0.5s">
+						 <img src="https://preadmin.dreamstechnologies.com/assets/img/inner-pages/inner-pages-10.svg" alt="img" class="img-fluid w-100">
+					  </div>
+				   </div>
+			   </div>
+			</div>
+		</div>
+		<!-- dark mode -->
   </HomeLayout>
 </template>
 

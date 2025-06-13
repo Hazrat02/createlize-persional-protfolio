@@ -13,7 +13,7 @@
   </div> -->
   <body>
     <AnimateBG />
-   <PopupAd />
+    <PopupAd />
 
     <header class="header header-one">
       <div class="container-fluid">
@@ -112,60 +112,146 @@
       </div>
     </header>
     <slot />
+    <!-- footer -->
     <footer class="footer">
-      <div class="container-fluid">
-        <div class="footer__items">
-          <div class="footer__item">
-            <p>
-              Copyright &copy; 2025 Andrea Gandolfo. Tutti i diritti riservati.
-            </p>
+      <span class="footer-shape-1 d-flex rounded-pill"></span>
+      <span class="footer-shape-2 d-flex rounded-pill"></span>
+      <span class="footer-shape-3 d-flex rounded-pill"></span>
+      <span class="footer-shape-4 d-flex rounded-pill"></span>
+      <div class="container">
+        <div 
+          class="d-flex overflow-hidden justify-content-between align-items-center schedule-info bg-white rounded-3 gap-3 flex-wrap"
+        >
+          <h3 style="color: black !important;"  v-animate
+              data-animation="fadeInLeft animated"
+              data-wow-duration="0.5s">
+            Build your First Website with Createlize team
+          </h3>
+          <div
+            class="d-flex align-items-center gap-2 flex-wrap"
+            v-animate
+              data-animation="fadeInRight animated"
+              data-wow-duration="0.5s"
+          >
+     
+            <a href="" class="btn btn-outline-one"
+              >Schedule a Demo</a
+            >
           </div>
-          <div class="footer__item">
-            <ul class="footer__navbar">
-              <li>
-                <a href="/index">Home</a>
+        </div>
+        <div class="row">
+          <div class="col-lg-8 col-md-6">
+            <div class="footer-logo mb-3">
+              <a
+                ><img
+                  src="https://createlize.com/wp-content/uploads/2025/01/createlize-logo-2.png"
+                  alt="img"
+              /></a>
+              <p class="text-white">
+                10 unique HTML Dashboards showcasing advanced layout features
+                built with Latest Technology
+              </p>
+            </div>
+          </div>
+          <div class="col-lg-2 col-md-3 col-6 footer-links">
+            <ul class="mb-3">
+              <li class="mb-3">
+                <a href="javascript:void(0);">Regular License</a>
               </li>
-              <li>
-                <a href="/about">Chi Sono</a>
+              <li class="mb-3">
+                <a href="javascript:void(0);">Extended License</a>
               </li>
-              <li>
-                <a href="portfolio.html">Pprogetti</a>
-              </li>
-              <li>
-                <a href="services.html">Servizi</a>
-              </li>
-              <li>
-                <a href="blog.html">Blog</a>
-              </li>
-              <li>
-                <a href="contact.html">Contatti</a>
-              </li>
+              <li><a href="javascript:void(0);">Logs</a></li>
             </ul>
           </div>
-          <div class="footer__item">
-            <ul class="footer__navbar">
-              <li>
-                <a href="#">Termini e Condizioni</a>
-              </li>
-              <li>
-                <a href="#">Privacy policy</a>
-              </li>
-            </ul>
+          <div class="col-lg-2 col-md-3 col-6">
+            <div class="d-flex align-items-center mb-3 fw-medium fs-14">
+              <a href="" class="me-2 flex-shrink-0"
+                ><img src="https://preadmin.dreamstechnologies.com/assets/img/icons/elite-author.svg" alt="img"
+              /></a>
+              <p class="fw-medium text-orange">Elite Author</p>
+            </div>
+            <div class="d-flex align-items-center mb-3 fw-medium fs-14">
+              <a href="" class="me-2 flex-shrink-0"
+                ><img src="https://preadmin.dreamstechnologies.com/assets/img/icons/trendsetter.svg" alt="img"
+              /></a>
+              <p class="fw-medium text-info">Trendsetter</p>
+            </div>
+            <div class="d-flex align-items-center mb-3">
+              <a
+                href=""
+                class="me-2 flex-shrink-0 fw-medium fs-14"
+                ><img src="https://preadmin.dreamstechnologies.com/assets/img/icons/author-level.svg" alt="img"
+              /></a>
+              <p class="fw-medium text-maroon">Author Level</p>
+            </div>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <div class="row align-items-center">
+            <div class="col-md-6">
+              <div class="copy-right">
+                <p class="text-white fs-14">
+                  &copy; 2025 Createlize, All Rights Reserved
+                </p>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="social-icons">
+                <a
+                  href="https://www.facebook.com/dreamstechnologieslimited/"
+                  class="avatar me-2 rounded-2 avatar-sm"
+                  target="_blank"
+                  ><i class="fa-brands fa-facebook-f"></i
+                ></a>
+                <a
+                  href="https://www.instagram.com/dreamstechnologieslimited/"
+                  class="avatar me-2 rounded-2 avatar-sm"
+                  target="_blank"
+                  ><i class="fa-brands fa-instagram"></i
+                ></a>
+                <a
+                  href="https://www.behance.net/dreamstechnologies"
+                  class="avatar me-2 rounded-2 avatar-sm"
+                  target="_blank"
+                  ><i class="fa-brands fa-behance"></i
+                ></a>
+                <a
+                  href="https://twitter.com/dreamstechltd"
+                  class="avatar me-2 rounded-2 avatar-sm"
+                  target="_blank"
+                  ><i class="fa-brands fa-twitter"></i
+                ></a>
+                <a
+                  href="https://pinterest.com/dreamguystech"
+                  class="avatar me-2 rounded-2 avatar-sm"
+                  target="_blank"
+                  ><i class="fa-brands fa-pinterest-p"></i
+                ></a>
+                <a
+                  href="https://www.linkedin.com/company/dreamstechnologies"
+                  class="avatar rounded-2 avatar-sm"
+                  target="_blank"
+                  ><i class="fa-brands fa-linkedin"></i
+                ></a>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </footer>
+    <!-- footer -->
   </body>
 </template>
 <script>
 import AnimateBG from "./../components/AnimateBG.vue";
-import PopupAd from './../components/Ads.vue'; // Adjust the path as needed
+import PopupAd from "./../components/Ads.vue"; // Adjust the path as needed
 // import axios from "axios";
 // import { isAuthenticated, logout } from "./../middleware/index";
 // import { useAuthUserStore } from "./../stores/user";
 
 export default {
-  components: { AnimateBG,PopupAd },
+  components: { AnimateBG, PopupAd },
   data() {
     // return {
     //   authUser: "",
