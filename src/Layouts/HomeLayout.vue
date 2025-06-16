@@ -15,7 +15,7 @@
     <AnimateBG />
     <PopupAd />
 
-    <header class="header header-one">
+    <header class="header header-one" :class="sideShow">
       <div class="container-fluid">
         <div class="header__wrapper">
           <div class="header__social">
@@ -23,7 +23,7 @@
               v-animate
               data-animation="bounceInDown animated"
               data-wow-duration="1s"
-              href="https://www.facebook.com/"
+              href="https://www.facebook.com/md.hazrat.alli.20605"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -33,7 +33,7 @@
               v-animate
               data-animation="bounceInDown animated"
               data-wow-duration="1.3s"
-              href="https://twitter.com/"
+              href="https://twitter.com/Hazratalli02"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -43,7 +43,7 @@
               v-animate
               data-animation="bounceInDown animated"
               data-wow-duration="1.6s"
-              href="https://www.linkedin.com/"
+              href="https://www.linkedin.com/hazratalli5999"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -53,7 +53,7 @@
               v-animate
               data-animation="bounceInDown animated"
               data-wow-duration="1.9s"
-              href="https://www.youtube.com/"
+              href="https://www.t.me/hazrat02"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -61,20 +61,19 @@
             </a>
           </div>
           <!-- Start Logo -->
-          <a class="logo" href="index.html">
+          <router-link class="logo" to="/">
             <img
               style="width: 200px"
               src="https://createlize.com/wp-content/uploads/2025/01/createlize-logo-2.png"
               alt="logo"
             />
-          </a>
+          </router-link>
           <!-- End Logo -->
           <nav class="navbar navbar-expand-lg">
             <button
               class="navbar-toggler"
               type="button"
-              aria-expanded="false"
-              aria-label="Toggle navigation"
+              @click="sidebar"
             >
               <span class="navbar-toggler-icon"></span>
             </button>
@@ -103,7 +102,7 @@
             </div>
             <!-- End Navbar -->
             <div class="header__btn">
-              <a href="contact.html" class="btn">
+              <a target="_blank" href="https://wa.me/8801783195999?text=Hi%2C%20Hazrat..%20I%20am%20from%20your%20portfolio%20website" class="btn">
                 <span data-text="Let's Talk">Let's Talk!</span>
               </a>
             </div>
@@ -253,17 +252,17 @@ import PopupAd from "./../components/Ads.vue"; // Adjust the path as needed
 export default {
   components: { AnimateBG, PopupAd },
   data() {
-    // return {
-    //   authUser: "",
-    //   showSidebar: false,
-    //   faqId: 1,
-    // };
+    return {
+      authUser: "",
+      showSidebar: false,
+      faqId: 1,
+    };
   },
   computed: {
     // Calculate the total number of pages based on the total number of items and itemsPerPage
     sideShow() {
       if (this.showSidebar == true) {
-        return "sidebar rotateInDownLeft ";
+        return "is-active rotateInDownLeft ";
       } else {
         return "";
       }
@@ -288,42 +287,42 @@ export default {
   //   }
   // },
 
-  // methods: {
-  //   faq(id) {
-  //     if (id === this.faqId) {
-  //       this.faqId = 0;
-  //     } else {
-  //       this.faqId = id;
-  //     }
-  //   },
-  //   sidebar() {
-  //     if (this.showSidebar == true) {
-  //       this.showSidebar = false;
-  //     } else {
-  //       this.showSidebar = true;
-  //     }
-  //   },
-  //   async logout() {
-  //     this.$setLoading(true);
-  //     logout();
-  //     await axios
-  //       .post("api/auth/logout")
-  //       .then((response) => {
-  //         this.$setLoading(false);
+  methods: {
+    faq(id) {
+      if (id === this.faqId) {
+        this.faqId = 0;
+      } else {
+        this.faqId = id;
+      }
+    },
+    sidebar() {
+      if (this.showSidebar == true) {
+        this.showSidebar = false;
+      } else {
+        this.showSidebar = true;
+      }
+    },
+    async logout() {
+      this.$setLoading(true);
+      logout();
+      await axios
+        .post("api/auth/logout")
+        .then((response) => {
+          this.$setLoading(false);
 
-  //         this.$toast.info(response.data.message);
+          this.$toast.info(response.data.message);
 
-  //         // Change the authenticated value to false
+          // Change the authenticated value to false
 
-  //         this.$router.push("/login");
-  //       })
-  //       .catch((error) => {
-  //         this.$setLoading(false);
-  //         this.$toast.error(error.response.data.message);
-  //       });
-  //     this.$setLoading(false);
-  //   },
-  // },
+          this.$router.push("/login");
+        })
+        .catch((error) => {
+          this.$setLoading(false);
+          this.$toast.error(error.response.data.message);
+        });
+      this.$setLoading(false);
+    },
+  },
 };
 </script>
 

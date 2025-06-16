@@ -23,7 +23,7 @@
               <span class="green-circle"></span>
             </div>
             <div class="buttons">
-              <button @click="copyCode">📋 Copy</button>
+              <button @click="copyCode">{{ copyText }}</button>
               <div style="flex: 1"></div>
               <button @click="runCode">▶ Run</button>
             </div>
@@ -92,8 +92,8 @@
               class="btn__full-inner d-flex align-items-center position-relative"
             >
               <span>
-                <span data-title="Scrivimi!">
-                  <span>I Miei Contatti</span>
+                <span data-title="Hazrat!">
+                  <span>Contact with me</span>
                 </span>
               </span>
             </div>
@@ -126,7 +126,7 @@
     <About />
 
     <!-- dark mode -->
-    <div class="dark-mode-section bg-dark" >
+    <div class="dark-mode-section bg-dark" id="ads">
       <span class="dark-mode-shape1"></span>
       <span class="dark-mode-shape2"></span>
       <span class="dark-mode-shape3"></span>
@@ -169,10 +169,10 @@
                 />
                 
               </div>
-            <!-- <button type="submit" class="btn btn-outline-one icon-space-left mt-4"
+            <button type="submit" class="btn btn-outline-one icon-space-left mt-4"
               >
-              <i class="fas fa-shopping-cart me-1"> </i>Purchase Template</button
-            > -->
+              <i class="fa fa-user me-1"> </i>Purchase Template</button
+            >
             </form>
 
            
@@ -185,7 +185,7 @@
               data-wow-duration="0.5s"
             >
               <img
-                src="https://preadmin.dreamstechnologies.com/assets/img/inner-pages/inner-pages-10.svg"
+                src="https://www.dwacommerce.com/static//image_gallery//solutions/sites/Build-and-Manage-Multiple-WebSites.jpg"
                 alt="img"
                 class="img-fluid w-100"
               />
@@ -223,6 +223,7 @@ const defaultCode = `<section class="hero2">
 </section>`;
 
 const code = ref("");
+const copyText = ref("📋 Copy");
 const output = ref("");
 const codeRef = ref(null);
 const isTyping = ref(true);
@@ -306,7 +307,10 @@ function insertTab() {
 
 function copyCode() {
   navigator.clipboard.writeText(code.value);
-  alert("Copied!");
+ copyText.value = "Copied!";         // Change button text
+  setTimeout(() => {
+    copyText.value = "📋 Copy";       // Reset after 2 seconds
+  }, 2000);
 }
 
 function runCode() {

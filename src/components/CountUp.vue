@@ -1,5 +1,5 @@
 <template>
-  <span ref="el">{{ displayValue }}</span>
+  <span class="timer" ref="el">{{ displayValue }}</span>
 </template>
 
 <script setup>

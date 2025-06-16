@@ -10,7 +10,8 @@
       <button class="close-button" @click="closePopup">&times;</button>
     <div class="popup-containt">
         <h1 >GET</h1>
-        <p> Envento & Themeforest Any web template through me </p>
+        <p > Envento & Themeforest Any web template through me </p>
+        <a href="https://createlize.org//#ads" class="btn btn-outline-one mt-2">Buy</a>
     </div>
       <!-- Ad Image -->
       <img
@@ -100,7 +101,9 @@ export default {
   z-index: 10;
 
 }
-
+.popup-containt p{
+color: rgb(222, 213, 213);
+}
 /* Close Button */
 .close-button {
   position: absolute;
