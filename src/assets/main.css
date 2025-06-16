@@ -3677,9 +3677,11 @@ border: 1px solid rgb(255, 254, 254);
     line-height: 32px;
     margin-top: -2px;
   }
-  .header {
-    position: static;
-  }
+  /* .header {
+    position: sticky;
+    top: 0;
+    left: 0;
+  } */
   .header__social {
     display: none;
   }
@@ -3690,9 +3692,9 @@ border: 1px solid rgb(255, 254, 254);
     padding: 8px 8px 8px 16px;
     gap: 10px;
   }
-  .hero {
+  /* .hero {
     padding: 0 0;
-  }
+  } */
   .hero h1 {
     font-size: 18vw;
   }

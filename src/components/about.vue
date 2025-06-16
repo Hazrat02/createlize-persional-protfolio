@@ -12,24 +12,27 @@ import CountUp from './CountUp.vue';
               <h4>About me</h4>
               <img src="https://andreagandolfo.it/images/arrow-line.png" alt="Arrow">
             </div>
-            <div class="section-title">
-              <h2 class="text-fill">Ciao sono Andrea.</h2><br/>
-              <h2 class="text-fill">Sono un consulente Sales & Marketing con base a Padova, specializzato nello sviluppo di strategie commerciali e di marketing ad alto impatto.</h2>
+            <div class="section-title" v-animate
+            data-animation="fadeInUp animated"
+            data-wow-duration="1s">
+              <h2 class="text-fill">Hi, I'm Hazrat ali.</h2><br/>
+              <h2 class="text-fill">A passionate Full Stack Web Developer with hands-on experience in both frontend and backend technologies.</h2>
             </div>
             <div class="about__icon-shape">
               <img src="https://andreagandolfo.it/images/shape-square.png" alt="Shape">
             </div>
             <div class="about__award-list">
-              <h3>Awards & Recognition</h3>
+              <h3>I specialize in:</h3>
               <ul>
-                <li>Best Web Design Award 2023 - <span>(Digital Design Awards)</span></li>
-                <li>Top UX Designer 2022 - <span>(Design Excellence Awards)</span></li>
-                <li>Mobile Apps Design 2020 - <span>(Design Excellence Awards)</span></li>
+                <li>Frontend - <span>(HTML, CSS, Bootstrap, tailwind, Vue.js, Own Package)</span></li>
+                <li>Backend Development - <span>(PHP, Laravel)</span></li>
+                <li>APIs & Database - <span>(REST API, MySQL)</span></li>
+                <li>Dev Tools & Version Control - <span>(Git & GitHub, NPM, Composer, VS Code)</span></li>
               </ul>
             </div>
           </div>
           <div class="about__right">
-            <p>Aiuto aziende e professionisti a crescere, distinguersi sul mercato e raggiungere i propri obiettivi attraverso soluzioni efficaci, personalizzate e orientati ai risultati.</p>
+            <p>With over 4 years of hands-on experience in building dynamic websites and web applications, I specialize in designing seamless digital experiences that are fast, functional, and user-friendly.</p>
             <div class="about__timer">
               <span class="timer" ><CountUp :to="15" :from="0" :duration="1000" /></span>
 
