@@ -124,6 +124,7 @@
     </section>
 
     <About />
+    <project />
 
     <!-- dark mode -->
     <div class="dark-mode-section bg-dark" id="ads">
@@ -202,6 +203,7 @@
 import { ref, onMounted, nextTick } from "vue";
 import HomeLayout from "./../Layouts/HomeLayout.vue";
 import About from "./../components/about.vue";
+import project from "./../components/project.vue";
 
 import Prism from "prismjs";
 import "prismjs/themes/prism-tomorrow.css";

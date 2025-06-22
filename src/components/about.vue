@@ -10,7 +10,9 @@ import CountUp from './CountUp.vue';
           <div class="about__left">
             <div class="section-subtitle">
               <h4>About me</h4>
-              <img src="https://andreagandolfo.it/images/arrow-line.png" alt="Arrow">
+              <img v-animation
+    data-animation="expand"
+    data-wow-duration="0.8s"  src="./../assets/frontend/img/icon/arrow-line.png" alt="Arrow">
             </div>
             <div class="section-title" v-animate
             data-animation="fadeInUp animated"
